@@ -12,9 +12,9 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [movie, setMuovie] = useState([]);
 
-  
+
   const getMovies = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     console.log("Cercando film per:", searchValue);
     axios.get(`${apiUrl}/search/movie`, {
       params: {
@@ -31,10 +31,9 @@ function App() {
 
   return (
     <>
-    <CountContext.Provider value={{getMovies, searchValue, setSearchValue, movie}}>
-      <h1>ciao</h1>
-      <Nav />
-      <Card />
+      <CountContext.Provider value={{ getMovies, searchValue, setSearchValue, movie }}>
+        <Nav />
+        <Card />
       </CountContext.Provider>
     </>
   )
